@@ -307,30 +307,63 @@ Finally, there exists a negative correlation between alpha/Fe and Fe/H metallici
 
 \section{Methodologies}
 \subsection{Data}
-I retrieved data on exoplanets from the NASA Exoplanet Archive \cite{NASA Exoplanet Archive}, and used the coordinates of their star, along with its GAIA magnitude as declared in the NASA data to retrieve further data on the star from the ESA GAIA archive \cite{GAIA Archive}.
+I retrieved data on exoplanets from the NASA Exoplanet Archive \cite{NASA Exoplanet Archive}, and used the coordinates of their star along with its GAIA magnitude as declared in the NASA data to retrieve further data on the star from the ESA GAIA archive \cite{GAIA Archive}. This further data included the parallax, proper motion, galactic velocity, [Fe/H] and [alpha/Fe] metallicities.
 
-\subsection{Analyses}
-Statistical analyses were done using an mmmc analsyses, using code originally wrote by some italian dude and then modified by tom
+\subsection{Linear correlation analysis}
+\label{subsection: MCMC}
+Statistical analyses were done using the Markov Chain Monte Carlo method, henceforth referred to as `MCMC' \cite{MCMC}.
+
+using code originally wrote by some italian dude and then modified by tom
+
+The planets were restricted via their radii and the range was adjusted and for each range, an MCMC analysis was done.
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
-The empirical affect of metal on a planet is different depending on what `type' of planet it is, as defined in section \ref{section: Planet formation}.
-\subsection{Affect of Stellar Metallicity, [Fe/H]}
+% The empirical affect of metal on a planet is different depending on what `type' of planet it is, as defined in section \ref{section: Planet formation}.
+% Above is a bad assumption to make. Since this is purely an empirical analysis it doesn't make sense to attempt to link it to theory, and should just present the results. Any hypothesising should be done later, either by someone else using the data or by me in the discussion section.
 
-\subsubsection{On Radius of Planet}
-\begin{figure}
-    \includegraphics{FeH vs radius correlations.pdf}
-    \caption{P-value of the correlation between planet radius and host start metallicity normalised by the standard deviation of that correlation, presented for values across a continuum of different radii ranges.}
-    \label{fig:enter-label}
+\subsection{Affect of the Stellar Metallicity}
+
+\subsubsection{On the Radius of Planets}
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.52\textwidth]{Graphs/FeH vs Radius Parameter Plot.png}
+    \caption{The planetary radius and its host star metallicity for all planets in the NASA exoplanet archive with associated stellar metallicity data. The radius of the planets is further indicated by the size and colour of the data points. The coloured dashed lines indicate the ranges of correlations as described in this section.}
+    \label{figure: Fe/H vs radius parameter plot}
 \end{figure}
 
-Data on planets below a radius of 1.6 were statistically insignificant, and the rate of change of correlations was not smooth when adjusting the range.
+Using the method described in section \ref{subsection: MCMC}, an analysis was done to search for linear relationships within the data.
 
+Correlations within the data varied depending on the radius, mass and density of the planets included and so correlations were calculated for a continuum of different ranges for these parameters.
 
-\paragraph{Radii below 1.6 Earth radii}
+\subsubsection{For different radius ranges}
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.52\textwidth]{Graphs/FeH vs radius correlations 2.pdf}
+    \caption{The P-value of the correlation between planet radius and host start metallicity normalised by the standard deviation of that correlation, across a continuum of different radii ranges.}
+    \label{figure: Fe/H vs radius correlations}
+\end{figure}
+
+As may also be seen visually on parameter plot (figure \ref{figure: Fe/H vs radius parameter plot}), the correlation data shown in figure \ref{figure: Fe/H vs radius correlations} confirms two different large scale trends within the planets.
+
+Firstly, there is a positive correlation in the lower radius planets, with the correlation being strongest for the range of radii (0.5$\pm$0.1)R$_{\oplus} \leq $R$_{planet} \leq $(10.7$\pm$0.1)R$_{\oplus}$ with a mean/$\sigma$ of 5.201. This range is that between the two blue dashed lines on the parameter plot (figure \ref{figure: Fe/H vs radius parameter plot}).
+
+Secondly, there is a negative correlation in the higher radius planets, with the correlation being strongest for the range of radii (5.7$\pm$0.1)R$_{\oplus} \leq $R$_{planet} \leq $(19.3$\pm$0.1)R$_{\oplus}$ with a mean/$\sigma$ of -6.587. There is also a correlation peak for the range 7.7 to 19.3, with a mean/$\sigma$ of -6.564. This range is shown with red dashed lines on the parameter plot. We believe that this splitting of the peak here is a result of not sure actually, will need to look at it more.
+
+Within the range of the lower radii group, there appears to be a localised negative correlation belonging to planets in the radius range 2.65 to 4.85. The P-value for this is significant, at -3.363. There are 68 planets in this group. This range is shown with green dashed lines on the parameter plot, and is circled in green on the correlation plot (figure \ref{figure: Fe/H vs radius correlations}).
+
+Various other statistically significant localised correlations exist, but doubt is cast onto their physical significance, since these occur within ranges of width less than 2 R$_{\oplus}$, and include low amounts of planets.
+
+\subsubsection{On the Mass of Planets}
+
+Once again, the MCMC method was used systematically on a range of radius ranges to search for linear relationships between Fe/H and planetary mass.
+
+Noticably, there was a lack of treends 
 
 \subsection{Metallicity of exoplanets}
 

@@ -22,4 +22,4 @@ I also believe that the used of multiprocessing within the code fixed a memory l
 Finally, the sort of numbers we are talking about produce a list of ~1 million correlation parameters. That is 1 million different MCMC analyses.
 
 ## Acknowledgements
-A part of this code performs a Bayesian correlation analysis technique originally designed by Figueira et al. (2016) [https://link.springer.com/article/10.1007/s11084-016-9490-5] \[Figueira et al., Astrobiology, **46**, pg.385, (2016)\]. This was update by Thomas Wilson to remove the dependency on PyMc.
+A part of this code performs a Bayesian correlation analysis technique originally designed by Figueira et al. (2016)[https://link.springer.com/article/10.1007/s11084-016-9490-5] \[Figueira et al., Astrobiology, **46**, pg.385, (2016)\]. This was update by Thomas Wilson to remove the dependency on PyMc.

@@ -13,9 +13,16 @@
 \usepackage{titlesec}
 \usepackage{multirow}
 
+
+% \titleformat{\section}{\bfseries\large\scshape\filcenter}{\thesection}{1em}{}
+% \titleformat{\subsection}{\bfseries\normalsize\scshape\filcenter}{\thesubsection}{1em}{}
+
 \titleformat{\section}{\bfseries\large\scshape\filcenter}{\thesection}{1em}{}
+
 \titleformat{\subsection}{\bfseries\normalsize\scshape\filcenter}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}{\vspace{-0.7em}\bfseries\small\scshape\filcenter}{\thesubsubsection}{1em}{\vspace{-0.7em}}
+
+\titleformat{\subsubsection}{\vspace{-0.9em}\bfseries\small\scshape\filcenter}{\thesubsubsection}{1em}{\vspace{-0.7em}}
+
 \titleformat{\paragraph}{\vspace{-0.7em}\bfseries\small\scshape}{}{1em}{}
 
 % Following change makes the caption size footnotesize From: http://rorasa.wordpress.com/2010/01/13/instant-latex-command-for-small-figure-and-table-caption/  
@@ -45,13 +52,14 @@
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{How Metallicity Affects Extrasolar Planets}
+% \title{How Metallicity Affects Extrasolar Planets}
+\title{\textbf{\large{How Metallicity Affects Extrasolar Planets}}}
 
-\author{2107688 \\
-        \small
+\author{\normalsize{2107688} \\
+        \small\textit{
         Department of Physics, University of Warwick,
-        Coventry CV4 7AL, The United Kingdom \\ \small of Great Britain and Northern Ireland}
-\date{13/12/23}
+        Coventry CV4 7AL, United Kingdom}}
+\date{12/03/24}
 
 \twocolumn[
 \maketitle 
@@ -59,15 +67,29 @@
 \begin{@twocolumnfalse}
 \begin{abstract} 
 \noindent
-Le abstract Le abstract Le abstract Le abstract Le abstract Le abstract Le abstract Le abstract Le abstract Le abstract Le abstract Le abstract Le abstract Le abstract Le abstract Le abstract Le abstract Le abstract Le abstract Le abstract Le abstract Le abstract Le abstract Le abstract Le abstract Le abstract Le abstract Le abstract
+Many studies have aimed to identify abundance relationships and correlations between stellar metallicity and planet mass and radius for specific sizes of planets. More recently some work has attempted to compare the strength of these relationships at a discrete number of predetermined ranges, however, no undisputed studies have as yet attempted to discover the limits and turning points of these trends. In this work, the correlations between stellar metallicity and planet mass, radius and density were calculated via a Bayesian correlation analysis for a continuum of different radii, masses and densities. In this report data are presented suggesting that the effect of metallicity on a planet's mass and radius depends on the scale of the planet, with massive, large planets exhibiting a negative correlation between stellar metallicity and planet mass and radius whilst low mass, small planets exhibit a positive correlation between stellar metallicity and planet mass and radius. It is proposed that this is a result of the core dominating the mass and radius of small, low mass planets whilst the abundance of hydrogen dominates the mass and radius of larger, massive planets. No strong correlation was found for mid-sized planets.
 \end{abstract}
 \vspace{11mm}
-\vspace{-5mm}
 \end{@twocolumnfalse} ]
+
+
+% \twocolumn[
+% \maketitle 
+% \vspace{-10mm}
+% \begin{@twocolumnfalse}
+% \begin{abstract} 
+% \noindent
+% % Requires fast and slow formation to happen
+% \end{abstract}
+% \vspace{11mm}
+% \vspace{-5mm}
+% \end{@twocolumnfalse} ]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
+% Not many comments on it since it was all very good
+
 \label{section: Introduction}
 \subsection{Objective}
 \label{subsection: Objective}
@@ -83,7 +105,7 @@ The purpose of this project is to investigate how the metallicity of a star syst
 % \label{fig: DensityMetallicityForDifferentMassRanges}
 % \end{figure}
 
-Of particular interest is the effect of metallicity on sub-Neptunes. For most mass ranges, previous works indicate that the metallicity of a planet, often betoken by its density, is positively correlated to the metallicity of the protoplanetary disc, being betokened by the system's star, but for sub-Neptunes there is a negative correlation reported.
+Of particular interest is the effect of metallicity on sub-Neptunes. For most mass ranges, previous works indicate that the metallicity of a planet, often betoken by its density, is positively correlated to the metallicity of the protoplanetary disc, being betokened by metallicity of the system's star, but for sub-Neptunes there is a negative correlation reported \cite{Wilson}.
 
 \subsection{Importance}
 \label{subsection: Importance}
@@ -110,7 +132,12 @@ This may particularly provide insight into the formation mechanics of a planet. 
 
 Planet metallicity in particular is important because it has been shown to affect the evolution of life, with Shapiro et al. (2023) \cite{Shapiro} recently suggesting that metal rich stars are less suitable for hosting exoplanets with life.
 
+% Lierature figures - add thing.
+% There's lots of text before a figure.
+% The neptune plot might look nice - also nice thing to have something right at the start
+
 \subsection{Previous Work}
+% Is good overview of the literature and well referenced
 \label{subsection: Previous Work}
 %%%%%%%%%%%% Abundance Relationships %%%%%%%%%%%%
 Ever since observations of planets and stellar metallicity have been possible astronomers have discovered apparent effects of stellar metallicity on planets orbiting those stars. Some time ago now, Santos, Israelian and Mayor (2004)\cite{Israelian&Mayor} and Fischer and Valenti (2005)\cite{Fischer&Valenti} reported a positive relationship between the stellar metallicity and the occurrence rate of orbiting high mass planets, and proposed the existence of a mass limit; a limit to the mass that a planet can achieve given a stellar metallicity. This occurrence rate has been repeatedly reported since, by (among others) Sousa et al. (2008)\cite{Sousa.et.al.2008}, Johnson et al. (2010)\cite{Johnson.et.al}, Buchhave et al. (2012)\cite{Buchhave.et.al.2012}, Ghezzi, Montet and Johnson (2018)\cite{Ghezzi.et.al.}, and Petigura et al. (2018)\cite{Petigura.et.al.}, the latter confirming the relationship in sub-Saturn sized planets (4.0 to 8.0 R$_\oplus$) and Jupiter sized planets (8.0 to 24.0 R$_\oplus$). It should be noted that occurrence rates are also reported to be affected by stellar mass and orbital period \cite{Petigura.et.al.}.
@@ -234,6 +261,7 @@ Throughout the studies previously performed in this area, within a given paper, 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Theory}
+% Good, and good the way I split up the planets
 \label{section: Theory}
 
 %There could be instances that require you to have multiple equations:
@@ -388,41 +416,54 @@ Finally, Afşar et al,. (2012)\cite{Afşar}. show that there exists a negative c
 
 % Wasn't I planning to have evolution somewhere? I guess I'll redesign the theory subtitles.
 
+% I forgot. Oh well.
+
 \section{Methodologies and Data}
 \subsection{Data}
-
-%Describe what *exoplanet* data was retreived
-
 Data on exoplanets were retrieved from the NASA Exoplanet Archive \cite{NASA Exoplanet Archive} on 19/02/2024, and included the radius, mass, density, insolation, GAIA magnitude of the planets' host star and the galactic coordinates (Declination and Right Ascension) for each planet. Only non controversial planets were considered and all values for the parameters are those which were not declared as the `limit'. The data selected for each planet were those with the 'default parameter' flag as true.
 
 The coordinates of their star were used along with its GAIA magnitude as declared in the NASA data to retrieve further data on the star from the ESA GAIA archive \cite{GAIA Archive}. This further data included the parallax, proper motion, [Fe/H] and [alpha/Fe] metallicities.
 
-All mass, radius and density data were restricted to having a relative error on both the lower and upper error of less than 20\% when the parameter involved was one of the parameters of the correlation being analysed. Metallicity data were restricted as discarding stars with either an upper or lower error of 0.1 dex or more.
+All mass, radius and density data were restricted to having a relative error on both the lower and upper error of less than 20\% when the parameter involved was one of the parameters of the correlation being analysed. Metallicity data were restricted by discarding stars with either an upper or lower metallicity error of 0.1 dex or more.
 
-\subsection{Linear correlation analyses}
+\subsection{Correlation analyses}
 \label{subsection: Linear Correlation Analysis}
-Linear regression analyses were performed using the Markov Chain Monte Carlo method, henceforth referred to as `MCMC' \cite{MCMC}, implementing code originally written by Pedro Figueira and updated in 2024 by Thomas Wilson.
+Correlation analyses were performed using a Bayesian analysis technique developed by Figueira et al. (2016)\cite{Figueira}. The technique makes use of the Markov Chain Monte Carlo method to determine a probability distribution for the strength of the correlation between two parameters. The value of the mean of this distribution, for descriptive purposes, is similar in nature and value to Spearman's R, and the role of the standard deviation of the distribution may be seen as analogous to the role of the p-value in p-value analyses. Use of the Bayesian analysis technique provides more detail into the correlation through the distribution.
 
-%Descrive a bit more about what the MCMC statistics does + read figueira
+\textit{Python} code originally developed by Figueira et al., and updated in 2024 by Thomas Wilson was used to implement this. A link to the code used to perform all analyses in this study can be found in section \ref{subsection: Code}.
 
-In these analyses, correlations were considered significant when the mean of the MCMC analysis results divided by the standard deviation of the MCMC analysis results (mean/$\sigma$) had a magnitude greater than or equal to 3.
+%Describe a bit more about what the MCMC statistics does + read figueira
+% Definitely need more
+% Means and std aresn't described what they are
 
+In these analyses, correlations were considered significant when the mean of the Bayesian analysis results divided by the standard deviation of the results (mean/$\sigma$) had a magnitude greater than or equal to 3.
+
+\vspace{2em}
 \subsubsection{Analyses across all ranges of a third parameter}
 \label{subsection: Ranges}
-For each pair of stellar-planet parameters, i.e metallicity-mass, metallicity-radius and metallicity-density, the planets considered were restricted via their radii, masses and densities per se. The lower and upper bounds of each range were varied and for each combination an MCMC analysis was performed. This produced a map of the strength of the correlation at all combinations of lower and upper bounds and enabled a quantified determination of the locations of lower and upper bounds of the ranges where the correlation strength was maximised %, of a particular parameter for a particular pair of parameters between which a correlation was being searched for.
+For each pair of stellar-planet parameters; metallicity-mass, metallicity-radius and metallicity-density, the planets considered were restricted via their radii, masses and densities one at a time. The lower and upper bounds of each range were varied and for each combination a correlation analysis was performed as described prior. From this, a map of the strength of the correlation at all combinations of lower and upper bounds could be created and the values of the lower and upper bounds of the ranges where the correlation strength was maximised could be determination quantitatively.  %, of a particular parameter for a particular pair of parameters between which a correlation was being searched for.
 
-The bin size of the upper and lower bound of the ranges were adjusted such that fluctuations around the peak could no longer be resolved, and as so, the uncertainties quoted for the upper and lower bounds of the ranges are the lowest round values for which these fluctuations were indeed unresolvable.
+%Above Fine
 
-The mean of the MCMC analysis divided by the standard deviation of that analysis was the valued used to determine the inflection point, often referred to as the 'peak', of the correlation. Although the mean and standard deviation at the inflection points were also always examined, the author would like to note that in future studies, a consideration of the mean and standard deviation in order to determine the inflection points of correlations at all ranges may have resulted in slightly different range locations. However for the limited parameters that this was tested on there was little difference in the location of the inflection points. This effect would be maximised when small changes in range significantly altered the amount of planets and thus the standard deviation, and upon checking the amount of planets for the ranges reported, it is not believed that this effect significantly altered the results.
+% This bit becomes unclear - peak???
+% Reword/reorder
+
+The mean divided by the standard deviation was the valued used when determining the range for which the correlation was maximised or minimised. This location is often referred to as the 'peak', of the correlation. Although the mean and standard deviation at the inflection points were always examined separately as well, the author would like to note that in future studies, considering the mean in order to determine the location of the inflection points of correlations, whilst still monitoring the mean/$\sigma$ to ensure significance, may have resulted in slightly different range locations. However, for the limited parameters that this was tested on there was little difference in the location of the inflection points. This effect would be maximised when small changes in range significantly altered the amount of planets and thus the standard deviation, and upon checking the amount of planets for the ranges reported, it is not believed that this effect significantly altered the results.
 
 This is especially saved by the hard limit of only considering correlations with at least 10 planets.
 
-Note: In section 1.4 I will set the stage for why I am collecting the data that I do, and that will make clear why I'm actually doing this range thing, and why I'm doing over different parameters.
+Due to fluctuations around the peaks, the ranges were placed into bins and the bin size of the upper and lower bound of the ranges were adjusted such that fluctuations around the peak could no longer be resolved, and as so, the uncertainties quoted for the upper and lower bounds of the ranges are the lowest round values for which these fluctuations were indeed unresolvable.
+
+% Note: In section 1.4 I will set the stage for why I am collecting the data that I do, and that will make clear why I'm actually doing this range thing, and why I'm doing over different parameters.
+
+% Actually reference back to 1.4 to the reader
 
 %Why the range over the third parameter
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
+% Good, figures are nice and text describes the data well given the amount of data that there were
+
 % The empirical affect of metal on a planet is different depending on what `type' of planet it is, as defined in section \ref{section: Planet formation}.
 % Above is a bad assumption to make. Since this is purely an empirical analysis it doesn't make sense to attempt to link it to theory, and should just present the results. Any hypothesising should be done later, either by someone else using the data or by me in the discussion section.
 
@@ -432,6 +473,13 @@ Using the method described in section \ref{subsection: Linear Correlation Analys
 
 %Say something like: we show the correlation plots (example:3) we show the population plot (example:2)
 \subsection{Affect of the Stellar Metallicity}
+
+% done a v good job at condencing the plots down into the story.
+% A few sections where I don't mention the figure in the text. Need to do that
+% See fig 2 - referenced in text - good. Figure 3??? Not referenced in the text.
+
+
+
 
 %-----------------------------------------------------------------------------
 %-----------------------------------------------------------------------------
@@ -451,40 +499,42 @@ The data suggests that correlations between the stellar metallicity and planet m
 %-----------------------------------------------------------------------------
 
 \paragraph{For different radius ranges}
+\vspace{-1em}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{Graphs/FeH vs Mass correlations - Radii ranges.pdf}
-    \caption{The mean/$\sigma$ value of the MCMC analysis for the relationship between planet mass and host star metallicity, across a continuum of different radii ranges. Only correlations with at least 10 planets are considered.}
+    \caption{The mean/$\sigma$ value of the correlation distribution for the relationship between planet mass and host star metallicity, across a continuum of different radii ranges. Only correlations with at least 10 planets are considered.}
     \label{figure: Fe/H vs Mass correlations - Radii ranges}
 \end{figure}
 
-As may also be seen in the logarised parameter plot (figure \ref{figure: Fe/H vs Mass parameter plot}), the correlation statistics confirmed the presence of two independent large scale trends within the data.
+As may be seen visually in the planet population plot (figure \ref{figure: Fe/H vs Mass parameter plot}), the correlation statistics displayed in figure \ref{figure: Fe/H vs Mass correlations - Radii ranges} confirmed the presence of two independent large scale trends within the planets.
 
-Firstly, there is a positive correlation between stellar metallicity and planet mass for smaller radius planet, maximised for the range (0.5$\pm$0.1)R$_{\oplus}~\leq~$R$_{planet}~\leq~$(6.5$\pm$0.5)R$_{\oplus}$, with a mean/$\sigma$ of 4.03.
+Firstly, there is a positive correlation between stellar metallicity and planet mass for smaller radius planet, maximised for the range (0.5$\pm$0.1)R$_{\oplus}~\leq~$R$_{planet}~\leq~$(6.5$\pm$0.5)R$_{\oplus}$, with a mean/$\sigma$ of 4.03. % AS SHOWN IN FIGURE 3... Invites them to look at the picture, and provides clarity on which figures I'm referecngin in each section. - ADDED
 
-Secondly, there is a negative correlation between stellar metallicity and planet mass for larger radius planets, peaking for the range (2.7$\pm$0.1)R$_{\oplus}~\leq~$R$_{planet}~\leq~$(17.2$\pm$0.4)R$_{\oplus}$, with a mean/$\sigma$ of -4.61. It is noted that as the upper limit is increased this value fluctuates but stays below -4.4, and begins to decease again as the upper limit approaches 35, which is the radius of the largest planet in the sample. Hence, it is suggested that more data are needed for higher radii planets to determine whether or not the peak at the upper bound of (17.2$\pm$0.4)R$_{\oplus}$ is instead a localised maximum due to random fluctuations in the trend as planets are added to the range as the limit is increased as opposed to a physically significant value.
+Secondly, there is a negative correlation between stellar metallicity and planet mass for larger radius planets, peaking for the range (2.7$\pm$0.1)R$_{\oplus}~\leq~$R$_{planet}~\leq~$(17.2$\pm$0.4)R$_{\oplus}$, with a mean/$\sigma$ of -4.61. It is noted that as the upper limit is increased, this value fluctuates but stays below -4.4 and begins to decease again as the upper limit approaches 35, which is the radius of the largest planet in the sample. Hence, it is suggested that more data are needed for higher radii planets to determine whether the peak at the upper bound of (17.2$\pm$0.4)R$_{\oplus}$ is instead a localised minimum due to random fluctuations in the trend as planets are added to the range as the limit is increased, as opposed to a physically significant value.
 
 No significant trends were apparent at any other ranges.
-
 
 %-----------------------------------------------------------------------------
 
 
 \paragraph{For different mass ranges}
+\vspace{-0.7em}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{Graphs/FeH vs Mass correlations - Mass ranges.pdf}
-    \caption{The mean/$\sigma$ value of the MCMC analysis for the relationship between planet mass and host star metallicity, across a continuum of different mass ranges. Only correlations with at least 10 planets are considered.}
+    \caption{The mean/$\sigma$ value of the correlation distribution for the relationship between planet mass and host star metallicity, across a continuum of different mass ranges. Only correlations with at least 10 planets are considered.\\\\A contour plot is used instead of a heat map due to computational purposes. All correlation data have been made available to enable reproduction of these analyses and graphs. See appendix.} % A contour plot is used for computational reasons. All data are
     \label{figure: Fe/H vs Mass correlations - Mass ranges}
 \end{figure}
 
-As with the radii ranges, there appear to be two large scale correlation zones when considering different mass ranges.
 
-Firstly, there is a positive correlation between stellar metallicity and planet mass in the lower mass planets, maximised for the range of (0.25$\pm$0.25)M$_{\oplus}~\leq~$M$_{planet}~\leq~$(44$\pm$4)M$_{\oplus}$, at a mean/$\sigma$ of 4.47.
+Also visible on figure \ref{figure: Fe/H vs Mass parameter plot}, as with the radius ranges there appear to be two large scale correlation zones when considering different mass ranges. These are confirmed in the correlation statistics, displayed in figure \ref{figure: Fe/H vs Mass correlations - Mass ranges}.
 
-Secondly, there is a negative correlation between stellar metallicity and planet mass in the higher mass planets, peaking for the range (15$\pm$5)M$_{\oplus}~\leq~$M$_{planet}~\leq~$(7900$\pm$100)M$_{\oplus}$, with a mean/$\sigma$ of -6.02. Is is noted here that this upper bound in mass appears to be a localised peak and, after a slight decrease in strength, the correlation strength yet continues to increase as the upper limit is raised towards the highest mass planet in these data. More data must be collected to confirm this.
+Firstly, there is a positive correlation between stellar metallicity and planet mass in the lower mass planets, maximised for the range (0.25$\pm$0.25)M$_{\oplus}~\leq~$M$_{planet}~\leq~$(44$\pm$4)M$_{\oplus}$, at a mean/$\sigma$ of 4.47.
+
+Secondly, there is a negative correlation between stellar metallicity and planet mass within the higher mass planets, peaking for the range (15$\pm$5)M$_{\oplus}~\leq~$M$_{planet}~\leq~$(7900$\pm$100)M$_{\oplus}$, with a mean/$\sigma$ of -6.02. Is is noted here that this upper bound in mass appears to be a localised peak and, after a slight decrease in strength, the correlation strength yet continues to increase as the upper limit is raised towards the highest mass planet in these data. More data must be collected to confirm a continuation of this negative trend in even higher mass planets.
 
 \begin{figure}[h!]
     \centering
@@ -493,31 +543,33 @@ Secondly, there is a negative correlation between stellar metallicity and planet
     \label{figure: Fe/H vs Mass for the jupiter mass range}
 \end{figure}
 
-Further trends were identified at localised intervals of mass. Of these, one negative correlation was deemed to be significant, and that was at the range of (275$\pm$10)M$_{\oplus}~\leq~$M$_{planet}~\leq~$(450$\pm$10)M$_{\oplus}$, as shown in figure \ref{figure: Fe/H vs Mass for the jupiter mass range}. This had a mean/$\sigma$ of 2.99. This is slightly under the value needed for this to be deemed significantly significant, but due to the lack of error consideration in MCMC analyses, it is possible that this range does indeed have some physical significance. Moreover, when just considering the range of planets between 274.4~M$_{\oplus}$ and 428.4~M$_{\oplus}$, the value rises to 3.34, which is significant. The large amount of planets in this range (95 planets) may further suggest a significance.
+Further trends were identified at localised intervals of mass. Of these, one negative correlation is deemed to be potentially significant, and that is for the range (275$\pm$10)M$_{\oplus}~\leq~$M$_{planet}~\leq~$(450$\pm$10)M$_{\oplus}$. The correlation in this range a mean/$\sigma$ of 2.99. This is slightly under the value needed for this to be deemed statistically significant. %, but due to the lack of error consideration in MCMC analyses, it is possible that this range does indeed have some physical significance.
+% As in it may actually have a stronger correlation, or may not. Thing is though it would just increase the std and then it still wouldn't be significant. Hence why we don't actually care about the errors in MCMC analyses.
+However, when just considering the range of planets between 274.4~M$_{\oplus}$ and 428.4~M$_{\oplus}$, as shown in figure \ref{figure: Fe/H vs Mass for the jupiter mass range}, the mean/$\sigma$ value rises to 3.34, which is significant. The large amount of planets in this range (95 planets) may further suggest a significance.
 
-More data are needed to confirm this trend, and there is as yet no explanation. %(Probably) - I would actually need to check this.
-
-%Could talk about the parameter space/add that in.
+More data are needed to confirm this localised trend and this study offers no explanation for its existence.
 
 
 %-----------------------------------------------------------------------------
 
 
 \paragraph{For different density ranges}
+\vspace{-1.8em}
+
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{Graphs/FeH vs Mass correlations - Density ranges.pdf}
-    \caption{The mean/$\sigma$ value of the MCMC analysis for the relationship between planet mass and host star metallicity, across a continuum of different density ranges. Only correlations with at least 10 planets are considered.}
+    \caption{The mean/$\sigma$ value of the correlation distribution for the relationship between planet mass and host star metallicity, across a continuum of different density ranges. Only correlations with at least 10 planets are considered.}
     \label{figure: Fe/H vs Mass correlations - Density ranges}
 \end{figure}
 
-There is only one significant correlation between stellar metallicity and planet mass apparent at different density ranges and that is a negative correlation for planets of density (0.65$\pm$0.05)g~cm$^{-3}~\leq~\rho_{planet}~\leq~$(1.5$\pm$0.1) g~cm$^{-3}$, and has a mean/$\sigma$ of -3.52. The centre of this range is at 1.1$\pm$0.1, for which the density of water is within 1 $\sigma$. It is propounded that these may be the 'watery worlds'.
+The correlation statistics, shown in figure \ref{figure: Fe/H vs Mass correlations - Density ranges}, indicate that there is only one significant correlation between stellar metallicity and planet mass apparent when restricting planets via their density, and that is the negative correlation for planets of density (0.65$\pm$0.05)g~cm$^{-3}~\leq~\rho_{planet}~\leq~$(1.5$\pm$0.1) g~cm$^{-3}$, and has a mean/$\sigma$ of -3.52. The centre of this range is at 1.1$\pm$0.1, for which the density of water is within 1 $\sigma$. It is propounded that these may be `watery worlds'. These planets are displayed on figure \ref{figure: Fe/H vs Mass correlations - Planet Plot Density 0.6 to 1.6}.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{Graphs/FeH vs Mass Planet Plot Density 0.6 to 1.6.pdf}
-    \caption{The stellar metallicity against mass for planets of density in the range 0.6~g~cm$^{-3}~\leq~\rho_{planet}~\leq~$1.6~g~cm$^{-3}$, with mass and density errors $<$ 20\%.}
-    \label{figure: Fe/H vs Mass correlations - Density ranges}
+    \caption{The planet mass and its host star's metallicity for planets of density in the range 0.6~g~cm$^{-3}~\leq~\rho_{planet}~\leq~$1.6~g~cm$^{-3}$, with mass and density errors $<$ 20\%, and metallicity errors $<$0.1. The radius of each planet is indicated by the size of the data point, and the density of each planet is indicated by its colour. 100 planets are shown here.}
+    \label{figure: Fe/H vs Mass correlations - Planet Plot Density 0.6 to 1.6}
 \end{figure}
 
 %There was also a further graph here which I could potentially add showing that the U-turn was present when considering this range of densities
@@ -528,13 +580,12 @@ There is only one significant correlation between stellar metallicity and planet
 %-----------------------------------------------------------------------------
 
 
-
 \subsubsection{On the Radius of Planets}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{Graphs/FeH vs Radius Planet Plot.pdf}
-    \caption{The planetary radius and its host star's metallicity for all planets in the dataset with radius uncertainties $<$ 20\% of the radius and metallicity errors $<$ 0.1. The radius of the planets is further indicated by the size and colour of the data points. 2466 planets are shown here.}
+    \caption{The planetary radius and its host star's metallicity for all planets in the dataset with radius uncertainties $<$ 20\% of the radius and metallicity errors $<$ 0.1. The radius of each planet is further indicated by the size and colour of its data point. 2466 planets are shown here.}
     \label{figure: Fe/H vs radius parameter plot}
 \end{figure}
 
@@ -545,26 +596,20 @@ As with the correlations between stellar metallicity and planet mass, the direct
 
 
 \paragraph{For different radius ranges}
+\vspace{-0.7em}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{Graphs/FeH vs Radius correlations - Radii ranges.pdf}
-    \caption{The mean/$\sigma$ value of the MCMC analysis for the relationship between planet radius and host star metallicity, across a continuum of different radii ranges. Only correlations with at least 10 planets are considered.}
+    \caption{The mean/$\sigma$ value of the correlation distribution for the relationship between planet radius and host star metallicity, across a continuum of different radii ranges. Only correlations with at least 10 planets are considered.}
     \label{figure: Fe/H vs Radius correlations - Radii ranges}
 \end{figure}
 
-As may also be seen visually on the planet plot (figure \ref{figure: Fe/H vs radius parameter plot}), the correlation data displayed in figure \ref{figure: Fe/H vs Radius correlations - Radii ranges} confirm two independent large scale trends within the planets.
+As may also be seen visually on the planet population plot (figure \ref{figure: Fe/H vs radius parameter plot}), the correlation statistics displayed in figure \ref{figure: Fe/H vs Radius correlations - Radii ranges} confirm two independent large scale trends within the planets.
 
-Firstly, there is a positive correlation between stellar metallicity and planet radius in the lower radius planets, with the correlation being strongest for the range of radii (1.75$\pm$0.25)R$_{\oplus}~\leq~$R$_{planet}~\leq~$(11$\pm$1)R$_{\oplus}$, with a mean/$\sigma$ of 5.68. % This range is that between the two blue dashed lines on the parameter plot (figure \ref{figure: Fe/H vs radius parameter plot}).
+Firstly, there is a positive correlation between stellar metallicity and planet radius in lower radius planets, with the correlation being strongest for the range (1.75$\pm$0.25)R$_{\oplus}~\leq~$R$_{planet}~\leq~$(11$\pm$1)R$_{\oplus}$, with a mean/$\sigma$ of 5.68.
 
-Secondly, there is a negative correlation in the higher radius planets, with the correlation being strongest for the range of radii (8.25$\pm$0.25)R$_{\oplus}~\leq~$R$_{planet}~\leq~$(35$\pm$1)R$_{\oplus}$ with a mean/$\sigma$ of -9.50. %This range is shown with red dashed lines on the parameter plot. We believe that this splitting of the peak here is a result of not sure actually, will need to look at it more.
-The upper limit of (35$\pm$1)R$_{\oplus}$ corresponds to the radius of the largest planet in the sample. More data are needed to confirm a potential continuation of this trend in even higher radius planets.
-
-
-%Within the range of the lower radii group, there appears to be a localised negative correlation belonging to planets in the radius range 2.65 to 4.85. The P-value for this is significant, at -3.363. There are 68 planets in this group. This range is shown with green dashed lines on the parameter plot, and is circled in green on the correlation plot (figure \ref{figure: Fe/H vs radius correlations}).
-%NOPE
-
-%Various other statistically significant localised correlations exist, but doubt is cast onto their physical significance, since these occur within ranges of width less than 2 R$_{\oplus}$, and include low amounts of planets.
+Secondly, there is a negative correlation in higher radius planets, with the correlation being strongest for the range of radii (8.25$\pm$0.25)R$_{\oplus}~\leq~$R$_{planet}~\leq~$(35$\pm$1)R$_{\oplus}$ with a mean/$\sigma$ of -9.50. The upper limit of (35$\pm$1)R$_{\oplus}$ corresponds to the radius of the largest planet in the sample. More data are needed to confirm a potential continuation of this trend in even higher radius planets.
 
 No other regions were identified which had statistically significant correlations.
 
@@ -573,19 +618,20 @@ No other regions were identified which had statistically significant correlation
 
 
 \paragraph{For different mass ranges}
+\vspace{-0.7em}
+
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.48\textwidth]{Graphs/FeH vs Radius correlations - Mass ranges.png}
-    \caption{The mean/$\sigma$ value of the MCMC analysis for the relationship between planet radius and host star metallicity, across a continuum of different mass ranges. Only correlations with at least 10 planets are considered.}
+    \caption{The mean/$\sigma$ value of the correlation distribution for the relationship between planet radius and host star metallicity, across a continuum of different mass ranges. Only correlations with at least 10 planets are considered.}
     \label{figure: Fe/H vs Radius correlations - Mass ranges}
 \end{figure}
 
-There were once again two large scale zones within the data when selecting groups of planets based on their mass and this is visible on the planet plot via the colour and confirmed with the correlation data.
+The correlation statistics displayed on figure \ref{figure: Fe/H vs Radius correlations - Mass ranges} indicate that there are once again two large scale zones within the data when selecting groups of planets based on their mass.
 
-Firstly, there is a positive correlation between stellar metallicity and planet radius for lower mass planets. This peaks for the range of masses (0.2$\pm$0.2)M$_{\oplus}~\leq~$M$_{planet}~\leq~$(60$\pm$20)M$_{\oplus}$, with a mean/$\sigma$ of 3.03. Whilst this value is strong enough to be deemed statistically significant, the MCMC correlation does not take uncertainties into account and so doubt must be cast onto this correlation. However, one may note the strength of this correlation for low \textit{radius} planets for which more planets could be considered and therefore one may accept more confidently the validity of the correlation in the mass range space.
+Firstly, there is a positive correlation between stellar metallicity and planet radius for lower mass planets. This peaks for the range (0.2$\pm$0.2)M$_{\oplus}~\leq~$M$_{planet}~\leq~$(60$\pm$20)M$_{\oplus}$, with a mean/$\sigma$ of 3.03. Whilst this value is strong enough to be deemed statistically significant, it is only just above the required threshold. However, one may note the strength of the positive correlation for low \textit{radius} planets for which more planets could be considered and therefore one may accept more confidently the mere existence of \textit{this} correlation.
 
-Secondly, there is a negative correlation between stellar metallicity and planet radius for the higher mass planets, which peaks for the range of masses (35$\pm$5)M$_{\oplus}~\leq~$M$_{planet}~\leq~$(4600$\pm$200)M$_{\oplus}$, with a mean/$\sigma$ of -8.12. The upper limit here corresponds to the mass of the most massive planet in the sample. More data are needed to confirm a potential continuation of this trend in even higher mass planets.
-
+Secondly, there is a negative correlation between stellar metallicity and planet radius for higher mass planets, which peaks for the range of masses (35$\pm$5)M$_{\oplus}~\leq~$M$_{planet}~\leq~$(4600$\pm$200)M$_{\oplus}$, with a mean/$\sigma$ of -8.12. The upper limit here corresponds to the mass of the most massive planet in the sample. More data are needed to confirm a potential continuation of this trend in even higher mass planets.
 
 No other regions were identified which had statistically significant correlations. 
 
@@ -594,33 +640,38 @@ No other regions were identified which had statistically significant correlation
 
 
 \paragraph{For different density ranges}
+\vspace{-1.0em}
+
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.49\textwidth]{Graphs/FeH vs Radius correlations - Density ranges.png}
-    \caption{The mean/$\sigma$ value of the MCMC analysis for the relationship between planet radius and host star metallicity, across a continuum of different density ranges. Only correlations with more than 10 planets are shown.}
+    \caption{The mean/$\sigma$ value of the correlation distribution for the relationship between planet radius and host star metallicity, across a continuum of different density ranges. Only correlations with at least 10 planets are considered.}
     \label{figure: Fe/H vs Radius correlations - Density ranges}
 \end{figure}
-Two large scale trends once again emerge when restricting the planets based on their density, although their strength is minimal.
+The correlation statistics as shown in figure \ref{figure: Fe/H vs Radius correlations - Density ranges} indicate the presence of two large scale trends when restricting the planets based on their density. %, although the correlation strengths are minimal. % This comment is incongruent - and inaccurate
 
 Firstly, there is a negative correlation between stellar metallicity and planet radius for low density planets, minimised for the range (0.075$\pm$0.025)g cm$^{-3}~\leq~\rho_{planet}~\leq~$(1.5$\pm$0.5)g cm$^{-3}$, with a mean/$\sigma$ of -4.62.
 
-The planets in this range of densities included no planets of radii $<$ 2.5 R$_{\oplus}$. % Yes we do confirm this, but it is more of a planet-planet thing this, and we unfortunetly do not have time for everything.
+Notably, the planets in this range of density, of which there were 211, included no planets of radius $<$ 2.5 R$_{\oplus}$.
+% I mean yeah obviously no low density planet of that radius is going to be able to exist. This is a bit incongruent.
 
-Secondly, there is a positive correlation between stellar metallicity and planet radius for high density planets, maximised for the range (2.25$\pm$0.25)g cm$^{-3}~\leq~\rho_{planet}~\leq~$(25$\pm$1)g cm$^{-3}$, with a mean/$\sigma$ of 2.62. This value is beneath that of 3, so significance cannot be confidently propounded. It is noted that 25g cm$^{-3}$ corresponds to the highest density planet in the sample, but more data are needed to confirm the continuation of this trend for larger density planets.
+Secondly, there is a positive correlation between stellar metallicity and planet radius for medium-high density planets, maximised for the range (2.25$\pm$0.25)g cm$^{-3}~\leq~\rho_{planet}~\leq~$(25$\pm$1)g cm$^{-3}$, with a mean/$\sigma$ of 2.62. This value is beneath that of 3, so significance cannot confidently be propounded. It is noted that 25g~cm$^{-3}$ corresponds to the highest density planet in the sample, but more data are needed to confirm the continuation of this trend for larger density planets.
 
-Notably there were no high density planets in the range of radii from 4 to 9 R$_{\oplus}$, and this meant that this positive trend was not continuous, as demonstrated in figure \ref{figure: Fe/H vs Radius for high density planets}.
+Notably, it was found that there were no high density planets in the range of radii from 4 to 9 R$_{\oplus}$, and this meant that this positive trend was not continuous, as demonstrated in figure \ref{figure: Fe/H vs Radius for high density planets}.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{Graphs/FeH vs Radius Planet Plot Density 2 to 26.pdf}
-    \caption{The planetary radius and its host star's metallicity for  planets in the dataset with radius and density uncertainties $<$ 20\% of the radius and density respectively, and metallicity errors $<$ 0.1, with densities in the range 2~g cm$^{-3}~\leq~\rho_{planet}~\leq~$26~g cm$^{-3}$. The radius of the planets is further indicated by the size of the data points, and the densities of the planets are represented by the colour of the planet on the plot.}
+    \caption{The planetary radius and its host star's metallicity for  planets in the dataset with radius and density uncertainties $<$ 20\% of the radius and density respectively, and metallicity errors $<$ 0.1, with densities in the range 2~g cm$^{-3}~\leq~\rho_{planet}~\leq~$26~g cm$^{-3}$. The radius of each planet is further indicated by the size of its data point, and the density of each planet is represented by the colour of the planet.}
     \label{figure: Fe/H vs Radius for high density planets}
 \end{figure}
 
 %From the figure one may visually determine that there is a negative correlation in the big boys. ------ It kinda all depends on that one planet though.
 
-One interpretation of the global trend in this range of densities may be that planets forming around metal poor stars are unable, or less likely to be able to form larger planets, however, the author of this report believes that this trend is a result of the distribution of planet radii and densities such that higher density planets are more likely to have lower radii and thus this positive trend in the higher density planets is a consequence of the positive trend between metallicity and radius seen at the lower radii planets, which was presented in the previous section of this report.
-Well it's not really though is it, it's just two different types of planets happening to show this correlation when you discard the neptunes/saturns. They are separate really so you can't do this.
+One interpretation of the global trend in this range of densities may be that planets forming around metal poor stars are unable, or less likely to be able to form larger planets, however, the author of this report believes that this trend is a result of the distribution of planet radii and densities such that higher density planets are more likely to have lower radii and thus this positive trend between stellar metallicity and planet radius in the higher density planets is a consequence of the positive trend between metallicity and radius seen at the lower radii planets, which was presented in the previous section of this report. See figure \ref{figure: Fe/H vs radius parameter plot} and compare.
+
+% Well it's not really though is it, it's just two different types of planets happening to show this correlation when you discard the neptunes/saturns. They are separate really so you can't do this.
+
 
 % - That's better. That's probably the reason.
 
@@ -637,53 +688,57 @@ Well it's not really though is it, it's just two different types of planets happ
 %-----------------------------------------------------------------------------
 
 
-
 \subsubsection{On the Density of Planets}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{Graphs/FeH vs Density Planet Plot.pdf}
-    \caption{The planetary density and its host star's metallicity for all planets in the dataset with mass, radius and density uncertainties $<$ 20\% of their values and metallicity errors $<$ 0.1. The radii of the planets are indicated by the size of the planets on the plot, and the colour represents their masses. 354 planets are shown here.}
+    \caption{The planetary density and its host star's metallicity for all planets in the dataset with mass, radius and density uncertainties $<$ 20\% of their values and metallicity errors $<$ 0.1. The radius of each planet is indicated by the size of the planet on the plot, and the mass of each planet is represented by its colour. 354 planets are shown here.}
     \label{figure: Fe/H vs density parameter plot}
 \end{figure}
 %The reason I have mass here as well is because densities have to have masses so we know we don't discard any data because of that. Apart from 5 planets for some strange reason.
 
-Visual inspection of the data indicates a lack of a correlation between stellar metallicity and planet density. Nether-the-less the same analyses were applied as were applied to the relationship between stellar metallicity and mass and radius.
+Visual inspection of the planet population plot (figure \ref{figure: Fe/H vs density parameter plot}) indicates a lack of a correlation between stellar metallicity and planet density. Nether-the-less the same range restriction analyses were applied as were applied to the relationship between stellar metallicity and mass and radius.
 
 
 %-----------------------------------------------------------------------------
 
 
 \paragraph{For different radius ranges}
+\vspace{-1em}
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.48\textwidth]{Graphs/FeH vs Density correlations - Radius ranges.png}
-    \caption{The mean/$\sigma$ value of the MCMC analysis for the relationship between planet density and host star metallicity, across a continuum of different radii ranges. Only correlations with at least 10 planets are considered.}
+    \caption{The mean/$\sigma$ value of the correlation distribution for the relationship between planet density and host star metallicity, across a continuum of different radii ranges. Only correlations with at least 10 planets are considered.}
     \label{figure: Fe/H vs Density correlations - Radii ranges}
 \end{figure}
 
 
-A positive correlation was apparent for one large range of radii, this being (4.75$\pm$0.25)R$_{\oplus}~\leq~$R$_{planet}~\leq~$(10.25$\pm$0.25)R$_{\oplus}$, with a mean/$\sigma$ of 3.00. Modifying the range in either direction results in a mean/$\sigma$ less than 3.00.
+The correlation statistics shown in figure \ref{figure: Fe/H vs Density correlations - Radii ranges} indicate the presence of a positive correlation for one large range of radii, this being (4.75$\pm$0.25)R$_{\oplus}~\leq~$R$_{planet}~\leq~$(10.25$\pm$0.25)R$_{\oplus}$, with a mean/$\sigma$ of 3.00. These planets are shown on figure \ref{figure: Fe/H vs Density planet plot - Radii range 1}. Modifying the range in either direction results in a mean/$\sigma$ less than 3.00.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{Graphs/FeH vs Density Planet Plot Radius 4.5 to 10.5.pdf}
     \caption{The planetary density and its host star's metallicity for planets in the dataset with mass, radius and density uncertainties $<$ 20\% of their values and metallicity errors $<$ 0.1, with radii in the range 4.5~R$_{\oplus}~\leq~$R$_{planet}~\leq~$10.5~R$_{\oplus}$. The radii of the planets are indicated by the size of the planets on the plot, and the colour represents their masses. 52 planets are shown here.}
-    \label{figure: Fe/H vs Density correlations - Radii range 1}
+    \label{figure: Fe/H vs Density planet plot - Radii range 1}
 \end{figure}
+
 
 A further positive correlation is apparent in a smaller range of radii, (9.75$\pm$0.25)R$_{\oplus}~\leq~$R$_{planet}~\leq~$(10.25$\pm$0.25)R$_{\oplus}$ which has a mean/$\sigma$ of 3.78. It is likely that this range is in part dominating the correlation in the aforementioned range.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{Graphs/FeH vs Density Planet Plot Radius 9.5 to 10.5.pdf}
-    \caption{The planetary density and its host star's metallicity for planets in the dataset with mass, radius and density uncertainties $<$ 20\% of their values and metallicity errors $<$ 0.1, with radii in the range 9.5~R$_{\oplus}~\leq~$R$_{planet}~\leq~$10.5~R$_{\oplus}$. The radii of the planets are indicated by the size of the planets on the plot, and the colour represents their masses. 16 planets are shown here.}
+    \caption{The planetary density and its host star's metallicity for planets in the dataset with mass, radius and density uncertainties $<$ 20\% of their values and metallicity errors $<$ 0.1, with radii in the range 9.5~R$_{\oplus}~\leq~$R$_{planet}~\leq~$10.5~R$_{\oplus}$. The radius of each planet is indicated by the size of the planet on the plot, and the mass of each planet is represented by its colour. 16 planets are shown here.}
     \label{figure: Fe/H vs Density correlations - Radii range 2}
 \end{figure}
-% We can probably find a way to combine the figures?
+% We can probably find a way to combine the figures? - Do we need to?
 
-Upon inspection of the range of planets 9.5~R$_{\oplus}~\leq~$R$_{planet}~\leq~$10.5~R$_{\oplus}$, it appears as though the sixteen planets were spread over a large range of masses and hence densities. It is unclear as to what physical process may be causing this positive correlation between metallicity and density specifically for this range of radii. More data are needed in order to verify the existence of this trend.
+Upon inspection of the range of planets 9.5~R$_{\oplus}~\leq~$R$_{planet}~\leq~$10.5~R$_{\oplus}$, it appears as though the sixteen planets were spread over a large range of masses and hence densities. It is unclear as to what physical process may be causing this positive correlation between metallicity and density specifically for this range of radii. It is possible that different processes occurring at different planetary mass scales completely independently happen to appear in sync when inspecting correlations across this range.  More data are needed in order to verify the existence of this trend and to determine the physical processes causing its presence within the data
+
+% Interestingly the large range mentioned is similar to the range of planets for which no large density exist as shown in figure \ref{figure: Fe/H vs Radius for high density planets}. 
+% This would be significant if the ranges were identical.Making the ranges identical would recover the positive correlation in low density planets
 
 % Nothing more to say on his really, tried to find some things but eh nothing really notable.
 
@@ -692,25 +747,27 @@ Upon inspection of the range of planets 9.5~R$_{\oplus}~\leq~$R$_{planet}~\leq~$
 
 
 \paragraph{For different mass ranges}
+\vspace{-1.0em}
+
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.49\textwidth]{Graphs/FeH vs Density correlations - Mass ranges.png}
-    \caption{The mean/$\sigma$ value of the MCMC analysis for the relationship between planet density and host star metallicity, across a continuum of different mass ranges. Only correlations with at least 10 planets are considered.}
+    \caption{The mean/$\sigma$ value of the correlation distribution for the relationship between planet density and host star metallicity, across a continuum of different mass ranges. Only correlations with at least 10 planets are considered.}
     \label{figure: Fe/H vs Density correlations - Mass ranges (All)}
 \end{figure}
 
-% Probably could do with the contour map here to be honest. The big range heat map doesn't show enough detail for small ranges if showing everything, and logarising a heatmap just looks wack.
 
+The correlation statistics as displayed in figure \ref{figure: Fe/H vs Density correlations - Mass ranges (All)} indicate one large range of negative correlation as well as one large range of positive correlation.
 
-The correlation statistics indicate a single large range of negative correlation as well as a single large range of positive correlation.
+Firstly, there is a negative correlation between stellar metallicity and planet density for low-medium mass planets, which peaks for the range of masses (0.3$\pm$0.3)M$_{\oplus}~\leq~$M$_{planet}~\leq~$(120$\pm$8)M$_{\oplus}$, with a mean/$\sigma$ of -2.86. There is no range for which the correlation falls below -3, however the range includes a large amount of planets, as shown on figure \ref{figure: Fe/H vs Density planet plot - Small masses}. % Refinement of other parameters such as insolation may strengthen this correlation. %That's a bit of an erronous comment. I'm wondering if it's better to remove or if I'm removing too much though. Let's say something a bit more provable
+The trend appears to be supported by a lack of high density planets around high metallicity stars. Refinement of other parameters such as insolation may provide more insight into the drivers of this trend.
 
-Firstly, there is a negative correlation between stellar metallicity and planet density for the low to medium mass planets, which peaks for the range of masses (0.3$\pm$0.3)M$_{\oplus}~\leq~$M$_{planet}~\leq~$(120$\pm$8)M$_{\oplus}$, with a mean/$\sigma$ of -2.86. There is no range for which the correlation falls below -3, however the range includes a large amount of planets. Refinement of other parameters, such as insolation, may strengthen this correlation.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{Graphs/FeH vs Density Planet Plot Mass 0 to 128.pdf}
     \caption{The planetary density and its host star's metallicity for planets in the dataset with mass, radius and density uncertainties $<$ 20\% of their values and metallicity errors $<$ 0.1, with masses in the range 0~M$_{\oplus}~\leq~$M$_{planet}~\leq~$128~M$_{\oplus}$. The radii of the planets are indicated by the size of the planets on the plot, and the colour represents their masses. 142 planets are shown here.}
-    \label{figure: Fe/H vs Density correlations - Mass range small boys}
+    \label{figure: Fe/H vs Density planet plot - Small masses}
 \end{figure}
 
 %Tbh I could actually just do this insolation thing.
@@ -718,26 +775,23 @@ Firstly, there is a negative correlation between stellar metallicity and planet 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.51\textwidth]{Graphs/FeH vs Density correlations - Mass ranges (0 to 1000).pdf}
-    \caption{The mean/$\sigma$ value of the MCMC analysis for the relationship between planet density and host star metallicity, across a continuum of different mass ranges from 0 to 1000 M$_\oplus$. Only correlations with at least 10 planets are considered.}
+    \caption{The mean/$\sigma$ value of the correlation distribution for the relationship between planet density and host star metallicity, across a continuum of different mass ranges from 0 to 1000 M$_\oplus$. Only correlations with at least 10 planets are considered. This figure shows a particular region of figure \ref{figure: Fe/H vs Density correlations - Mass ranges (All)}}
     \label{figure: Fe/H vs Density correlations - Mass ranges (0 to 1000)}
 \end{figure}
-%These are presumably the bigger bois. Well it says 0 to 1000.
 
-Secondly there is a positive correlation between stellar metallicity and planet density peaking in the range of masses (135$\pm$5)M$_{\oplus}~\leq~$M$_{planet}~\leq~$(510$\pm$10)M$_{\oplus}$, with a mean/$\sigma$ of 3.42.
+Secondly, as indicated on figure \ref{figure: Fe/H vs Density correlations - Mass ranges (0 to 1000)}, there is a positive correlation between stellar metallicity and planet density which is maximised for the range (135$\pm$5)M$_{\oplus}~\leq~$M$_{planet}~\leq~$(510$\pm$10)M$_{\oplus}$, with a mean/$\sigma$ of 3.42. However, the correlations at slightly broader or shifted ranges are have a mean/$\sigma$ less than 3 and are thus statistically insignificant. The correlation data suggests that breaking of the 3 limit at this range is due to a fluctuation where planets in the lower and higher end of this range happen to individually have strong correlations. A population plot for these planets is shown in figure \ref{figure: Fe/H vs Density planet plot - Mass range big boi}.
 
-However, the correlations at slightly broader or shifted ranges are less than 3 and thus insignificant. The correlation data suggests that breaking of the 3 limit at this range is due to a fluctuation where planets in the lower and higher end of this range happen to individually have strong correlations. The $>$ 3 limit is not consistently broken when slightly adjusting the upper and lower bounds of the range.
+There is no positive trend for higher mass planets generally. More data are needed to verify the existence of this trend.
 
-The correlation data does indicate a general positive trend for higher mass planets. More data are needed to further investigate the existence of this trend.
-
-
-Inspection of the radii of both of these groups indicates that restricting the masses in this way also eh I can't think what words, but basically I think it's just the radius/metallicity concept coming through in the densities again.
+% Inspection of the radii of both of these groups indicates that restricting the masses in this way also eh I can't think what words, but basically I think it's just the radius/metallicity concept coming through in the densities again.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{Graphs/FeH vs Density Planet Plot Mass 130 to 520.pdf}
     \caption{The planetary density and its host star's metallicity for planets in the dataset with mass, radius and density uncertainties $<$ 20\% of their values and metallicity errors $<$ 0.1, with masses in the range 130~M$_{\oplus}~\leq~$M$_{planet}~\leq~$520~M$_{\oplus}$. The radii of the planets are indicated by the size of the planets on the plot, and the colour represents their masses. 128 planets are shown here.}
-    \label{figure: Fe/H vs Density correlations - Mass range big boi}
+    \label{figure: Fe/H vs Density planet plot - Mass range big boi}
 \end{figure}
+% Critique this corelation even due to the visible look.
 
 %See note on "for the lower density one it's more highly correlated".
 %Particularly at lower masses I think. I think that double analysis might have to be done.
@@ -745,46 +799,50 @@ Inspection of the radii of both of these groups indicates that restricting the m
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.49\textwidth]{Graphs/FeH vs Density correlations - Mass ranges - Sub Neptunes.png}
-    \caption{The mean/$\sigma$ value of the MCMC analysis for the relationship between planet density and host star metallicity, across a continuum of different masses from 0 to 40 M$_{\oplus}$. Only correlations with at least 10 planets are considered.}
+    \caption{The mean/$\sigma$ value of the correlation distribution for the relationship between planet density and host star metallicity, across a continuum of different masses from 0 to 40 M$_{\oplus}$. Only correlations with at least 10 planets are considered.}
     \label{figure: Fe/H vs Density correlations - Mass ranges (0 to 40)}
 \end{figure}
 
-Finally, no correlation is found between stellar metallicity and planet density in the sub-Neptune range of masses.
-
-
-%The inclusion of different ranges will be easier to check once the graphs are in.
+Finally, the correlation data as displayed in figure \ref{figure: Fe/H vs Density correlations - Mass ranges (0 to 40)} indicates no correlation is found between stellar metallicity and planet density in the sub-Neptune range of masses.
 
 
 %-----------------------------------------------------------------------------
 
 
+%%%%%%%%% Done up to here %%%%%%%%%
+
+
 \paragraph{For different density ranges}
+\vspace{-1.0em}
+
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.49\textwidth]{Graphs/FeH vs Density correlations - Density ranges.png}
-    \caption{The mean/$\sigma$ value of the MCMC analysis for the relationship between planet density and host star metallicity, across a continuum of different density ranges. Only correlations with at least 10 planets are considered.}
+    \caption{The mean/$\sigma$ value of the correlation distribution for the relationship between planet density and host star metallicity, across a continuum of different density ranges. Only correlations with at least 10 planets are considered.}
     \label{figure: Fe/H vs Density correlations - Density ranges (All)}
 \end{figure}
 
 
-As can be seen from the planet plot, the correlation data confirms that there are a lack of statistically significant trends in the density range space.
+As may be seen visually on the planet population plot (figure \ref{figure: Fe/H vs density parameter plot}), the correlation data displayed in figure \ref{figure: Fe/H vs Density correlations - Density ranges (All)} confirms that there are a lack of statistically significant correlations between stellar metallicity and planet density when restricting planets via their radius.
 
-There is a negative correlation between stellar metallicity and planet density for a large range of density which is minimised for the range (0.5$\pm$0.1)g cm$^{-3}~\leq~\rho_{planet}~\leq~$(11.5$\pm$0.5)g cm$^{-3}$, with a mean/$\sigma$ of -2.89. Inspection of the planet plot at this range indicates that this is merely a global trend in the general negative direction at this density range. There do not appear to be any clear trends among specific types of planets, and the MCMC mean for the correlation is weak, at 0.17.
+There \textit{is} a negative correlation between stellar metallicity and planet density which is minimised for the range (0.5$\pm$0.1)g cm$^{-3}~\leq~\rho_{planet}~\leq~$(11.5$\pm$0.5)g cm$^{-3}$, and has a mean/$\sigma$ of -2.89, however, inspection of the planet plot at this range indicates that this is merely a global trend in the general negative direction at this density range. There do not appear to be any clear trends among specific types of planets, and the MCMC mean for the correlation is weak, at 0.17.
+%Where's the planet plot?
+I'm running out of room though.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.52\textwidth]{Graphs/FeH vs Density correlations - Density ranges (low).pdf}
-    \caption{The mean/$\sigma$ value of the MCMC analysis for the relationship between planet density and host star metallicity, across a variety of low density ranges. Only correlations with at least 10 planets are considered.}
+    \caption{The mean/$\sigma$ value of the correlation distribution for the relationship between planet density and host star metallicity, across a variety of low density ranges. Only correlations with at least 10 planets are considered.}
     \label{figure: Fe/H vs Density correlations - Density ranges (Low)}
 \end{figure}
-%Is this really needed?
+%Is this really needed? - Eh... nr. Oh well. I feel like I'm removing too much stuff
 
-There is a positive correlation between stellar metallicity and planet density for low density planets, peaking for the range (0.02$\pm$0.02)g~cm$^{-3}~\leq~\rho_{planet}~\leq~$(1.7$\pm$0.1)g~cm$^{-3}$, with a mean/$\sigma$ of 2.69. Again, an inspection of the planet plot for this region suggests there is more of a general trend. The correlation itself is weak, with an MCMC mean of 0.17 despite having 228 planets. Increasing the upper bound by 0.5 $\sigma$ of uncertainty to 1.8~g~cm$^{-3}$ reduces the mean to 0.114, and hence the mean/$\sigma$ to 1.8. Just 7 planets are added by doing this and further to this, it appears that just 2 of these planets, in the range 1.79 to 1.8~g~cm$^{-3}$, dominate this effect. Therefore, it is not believed that this correlation is significant. The author believes that this is more likely an affect of restricting the radii to smaller values (as a result of density-radius relationships) and hence reproduces the positive correlation between stellar metallicity and planet density seen for low radius planets, which had a mean of 0.37.
+Figure \ref{figure: Fe/H vs Density correlations - Density ranges (Low)} indicates that there is also a positive correlation between stellar metallicity and planet density for low density planets, peaking for the range (0.02$\pm$0.02)g~cm$^{-3}~\leq~\rho_{planet}~\leq$ (1.7$\pm$0.1)g~cm$^{-3}$, with a mean/$\sigma$ of 2.69. The correlation itself is weak, with an MCMC mean of 0.17 despite having 228 planets. Increasing the upper bound by 1 $\sigma$ of uncertainty to 1.8~g~cm$^{-3}$ reduces the mean to 0.114, and hence the mean/$\sigma$ to 1.8. Just 7 planets are added by doing this and further to this, it appears that just 2 of these planets, in the range 1.79 to 1.8~g~cm$^{-3}$, dominate this effect. Therefore, it is not believed that this correlation is physically significant. The author believes that this is more likely an affect of restricting the radii to smaller values (as a result of density-radius relationships) and hence reproduces the positive correlation between stellar metallicity and planet density seen for low radius planets, which had a mean of 0.37.
 
 The correlation data as presented in figure \ref{figure: Fe/H vs Density correlations - Density ranges (Low)} suggest various splittings within the aforementioned region, but the data were not numerous enough to determine relationships at smaller density ranges with appropriate certainty. More data are needed in order to determine whether there are physical processes leading to this splitting.
 
 %Could we actually check this density radius relationship ourselves? Particularly the density-radius relationship at this density range.
-
+% Nahhhh
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -796,16 +854,17 @@ The correlation data as presented in figure \ref{figure: Fe/H vs Density correla
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Thing is, above 3/4 the correlation is clearly fine anyway and the mean can take over to identify the peak. It probably doesn't skew it that much though to be honest. The actual peak will probably only be skewed a little, and comparing it to other's doesn't matter because when we do that we really ddo use the mean anyway. So probably fine, although I've put it in the list of things to come back to if there's time.
-
 
 \section{Discussion}
+% Try to make sure you do indeed postulate rather than saying it is. The it becomes really nice and uncomplainable.
+% But is good apparently, fine as it is
 \subsection{Existence of Ranges}
-From the analyses, which are summarised in table \ref{table: Correlation ranges summary}, it is evident that the effect of metallicity on exoplanet properties varies depending on the magnitude of the mass and radius that the planet has.
+From the analyses, which are summarised in table \ref{table: Correlation ranges summary}, it is evident that the effect of metallicity on exoplanet properties varies depending on the scale of the mass and radius that the planet has.
 
 \subsubsection{Detailed Discussion of Ranges}
-\vspace{1.7em}
+\vspace{1.5em}
 \paragraph{Groupings via Radius}
+\vspace{-0.7em}
 In smaller radius planets, the positive correlation between stellar metallicity and planet mass peaks in the range (0.5 $\pm$ 0.1)R$_\oplus$ to (6.5 $\pm$ 0.5)R$_\oplus$. Whilst these are noted as small radii, this upper limit is relatively large and includes Neptune, although is not large enough to include Saturn. When considering the range of small planets for which there is a positive correlation between metallicity and planet radius instead of mass, both the lower and upper bounds of this range are shifted higher to from (1.75 $\pm$ 0.25)R$_\oplus$ to (11 $\pm$ 1)R$_\oplus$. This range includes the planets Saturn and, within one standard deviation, Jupiter. Notably, this does not include the super-Earth as defined by Petigura et al and others. This may indicate a general inability for such low mass and small radius planets to begin accretion of an atmosphere, regardless of the metallicity content of the disc.
 
 In larger radius planets, the negative correlation between stellar metallicity and planet mass peaks in the range (2.7 $\pm$ 0.1)R$_\oplus$ to (17.2 $\pm$ 0.4)R$_\oplus$. This range includes planets likely to be sub-Neptune planets to planets larger than Jupiter. The upper bound to this range is likely to be a localised peak since the correlation does not significantly decrease when considering planets beyond this, although more data are needed on higher radius planets to confirm this.\\
@@ -817,11 +876,15 @@ The negative correlation between stellar metallicity and planet radius peaks in 
 % The author believes that more restrictions on system conditions may result in the ability to resolve the correlations in these overlap ranges more clearly.
 
 \paragraph{Groupings via Mass}
+\vspace{-0.7em}
 In low mass planets, the positive correlation between stellar metallicity and planet mass peaks in the range (0.25$\pm$0.25)M$_{\oplus}$ to (44$\pm$4)M$_{\oplus}$. These results are in agreement with those found by Sousa et al. (2019)\cite{Sousa.et.al.} who found a positive correlation between stellar metallicity and planet mass for planets of mass $<$~30~M$_\oplus$. The positive correlation between metallicity and radius for low mass planets peaks in the range (0.2$\pm$0.2)M$_{\oplus}~\leq~$M$_{planet}~\leq~$(60$\pm$20)M$_{\oplus}$.\\
 Interestingly, unlike in small \textit{radii} planets, in low mass planets, the range for which planets exhibit a positively correlation between stellar metallicity and mass and the range for which they exhibit a positively correlation between stellar metallicity and radius are in agreement within 1 $\sigma$. Both ranges include terrestrial planets, Neptune mass planets, and planets with a mass greater than Neptune, but less than Saturn. The inclusion of the super-Earths here, particular their enhancement of the correlation between stellar metallicity and radius is peculiar given the exclusion from such a correlation in the lower radius range. More specific restrictions, perhaps those restricting based on core mass, may yield more consistent results.
 
 In high mass planets, the negative correlation between stellar metallicity and planet mass peaks in the range (15$\pm$5)M$_{\oplus}~\leq~$M$_{planet}~\leq~$(7900$\pm$100)M$_{\oplus}$. This range includes Neptune, Uranus (within 1 $\sigma$) and all planets of higher mass than Neptune. The negative correlation between stellar metallicity and planet radius peaks in the range (35$\pm$5)M$_{\oplus}~\leq~$M$_{planet}~\leq~$(4600$\pm$200)M$_{\oplus}$, with the upper limit here representing the mass of the heaviest planet in the sample. Further data are needed to confirm the continuation of this trend in higher mass planets. This range does not include Neptune or Uranus, but includes Saturn and planets of higher mass than Saturn. The correlation for this range was one of the strongest correlations seen within the data, with a mean of -0.348 with the same correlation for large radii planets exhibiting an equally strong correlation, with a mean of -0.35. Refer to table \ref{table: Correlation ranges summary} for a visual comparison.
 
+
+\vspace{2.0em}
+\subsubsection{Overview of Ranges}
 
 \begin{table}[h!]
 \begin{tabular}{ c | c | c | c }
@@ -874,57 +937,40 @@ In high mass planets, the negative correlation between stellar metallicity and p
 \end{tabular}
 \caption{A summary of all of the different ranges of masses, radii and densities within which significant correlations between stellar metallicity and mass, radius and density are present.
 \\\\Each column represents a different pair of parameters for which a correlation is found. Each row represents different classes of planets as were established.
-\\\\Within each box, 4 parameters are given. From top to bottom these are: The mean of the MCMC analysis results, the standard deviation of the MCMC analysis results, the mean/$\sigma$, and the range for which this correlation was strongest. The uncertainty in the ranges are presented in the results.}
+\\\\Within each box, 4 parameters are given. From top to bottom these are: The mean of the correlation distribution, the standard deviation of the correlation distribution, the mean/$\sigma$, and the range for which this correlation was strongest. The uncertainty in the ranges are presented in the results.}
 \label{table: Correlation ranges summary}
 \end{table}
 
+Small, low mass planets exhibit positive correlations between metallicity and their mass and radius. A possible explanation for this is that these low mass planets will be less likely to gain and retain a hydrogen atmosphere and so the radius and mass of the planet will be dominated by the iron and solid components. For these planets, an increase of the metallicity results in an increase of iron content seen, thus an increase in the core mass, and thus results in an increase in the overall mass of the planet. % Since for separate reasons hydrogen is not found around super-Earths (r<1.7), wont matter ahh no this is all small bois.
 
-\subsubsection{Overview of Ranges}
-Small, low mass planets exhibit positive correlations between metallicity and their mass and radius. A possible explanation for this is that these low mass planets will be less likely to gain and retain a hydrogen atmosphere, and so the metallicity of the planet will be dominated by the iron (+solid) component. Therefore, for these planets, an increase of the metallicity results mainly in an increase of iron content seen, thus an increase in the core mass, and thus results in an increase in the overall mass of the planet. The dominance of iron over hydrogen on the metallicity of terrestrial planets in particular is in agreement with the models of Bitsch and Battistini (2020) \cite{Bitsch&BattistiniTheoreticalModel}.
-%Given this theory, the radius is likely to increase as well, but not by as much - which is exactly what we see.
+This explanation is supported by the models of Bitsch and Battistini (2020) \cite{Bitsch&BattistiniTheoreticalModel} which predicts an increase of planetesimal iron content, and hence core iron content, with increasing stellar metallicity.
 
+Given this supposition, the radius may be likely to increase with stellar metallicity as well, but as it is something highly dependent on the core mass for lower mass planets, it would be expected that the strength of the correlation between stellar metallicity and planet radius is lower than the strength of the correlation between stellar metallicity and planet mass since it is a secondary effect of an increase of mass. As displayed in table \ref{table: Correlation ranges summary}, these data support this hypothesis.
 
-Since the increase in iron is the dominant effect 
-% seen in lower mass planets when increasing the metallicity,
-of increasing the disc metallicity in low mass planets,
-% yet there is still no significant atmosphere,
-one might infer that the relationship between stellar metallicity and planet radius will be less strong than that of stellar metallicity and planet mass, in both low mass and low radius planets. These data support this hypothesis.
+A potential critique of this explanation is that the effect on the radius of the planet, when restricting via radii, is stronger without planets of radius less than (1.75±0.25)~R$_\oplus$, and still increases when adding planets up to (11±1)~R$_\oplus$. A possible resolution of this comes from considering the planetesimal accretion scenario of planet formation, where the cores of these planets would form slowly and only begin to accumulate gas during the late stage of the disc where there is less free gas to accrete. This prevents their evolution to larger planets and leads to an endpoint where the core mass determines the amount of gas that can be accrete, and hence has a effect on the radius. This would allow the positive correlation between stellar metallicity and planet radius to extend to higher radius ranges but to still be limited. Since one might expect the accretion of gas to have a more dominant effect on radius than just the mass of a naked core on its radius, one might also expect the correlation between stellar metallicity and radius to be stronger when allowing a small gaseous envelope to form around them. This may explain the lower bound of the radius range mentioned.
 
 % This is copied from lower down: Point to self - the positive relationship property relies on a low jeans mass, which you get where the core/water mass is overall small. However, you also get this if you have higher insolation, so I would expect the upper bound of the lower range to increase with more insolation. I would also expect the whole thing to be of stronger correlation really.
 
-Taking this idea of iron dominance, when considering high insolation of the planets, one might expect the stellar metallicity--planet mass relationship to become stronger, since this would further enforce the dominance of iron in the effect of stellar metallicity on the planets, driving the relationship.
+% Taking this idea of core mass dominance on the radius, when considering high insolation of the planets, one might expect the stellar metallicity--planet mass relationship to become stronger, since this would further enforce the dominance of the core in the effect of stellar metallicity on the planets, driving the relationship, %Ohh I see. I'm thinking about the lower H so lower core. Yeah see that needs to go. Oh dear.
+% and reduce the effect of the 
 
-In the case of the stellar metallicity--planet radius relationship, one might expect the correlation to be weaker still, as hydrogen, which increases the radius more so than Fe, is less present.
+% I mean I could sort of say, if this then this, if this then this. No because it doesn't make sense to talk about that really.
 
-When considering these correlations with only planets with $\geq$ 250 Earth flux insolation, there is still a positive correlation between stellar metallicity and planet mass which peaks in the same range as before, but with an upper bound of 7.5±0.3~R$_\oplus$. The mean of the correlation rises to 0.36, from 0.32, with a standard deviation of 0.095. This is not a major increase in correlation strength yet it still agrees with the hypothesis.
+% In the case of the stellar metallicity--planet radius relationship, one might expect the correlation to be weaker still, as hydrogen, which increases the radius more so than Fe, is less present. %Well then the points contradict. I think again I mixed up some ideas in my head
+
+In the low mass, small radius planets, the insolation of the planet may greatly affect the planet's ability to retain an atmosphere. When considering highly irradiated, atmosphere lacking planets, one might expect the stellar metallicity--planet mass relationship to become stronger, since this would further enforce the dominance of the core in the effect of stellar metallicity on the planets, reducing the degeneracy so reducing the variation. In the case of the stellar metallicity--planet radius relationship, one might expect the correlation to be weaker, as the relationship returns to being reliant on just the radius of the core without any backup from the hydrogen.
+
+When considering these correlations with only planets with $\geq$ 250 Earth flux insolation, there is still a positive correlation between stellar metallicity and planet mass which peaks in the same range as before, but with an upper bound of 7.5±0.3~R$_\oplus$. The mean of the correlation rises to 0.36, from 0.32, with a standard deviation of 0.095. This is not a major increase in correlation strength yet may indicate that there is less variation in the trend and support the hypothesis.
 
 The positive correlation between stellar metallicity and radius now sits at the range 0.9±0.1~R$_\oplus$ to 13.5±0.5~R$_\oplus$, which is slightly larger than without a restricted insolation, and has a mean of 0.29 and a standard deviation of 0.055.
 
-Notably, the value of the mean for a wide variety of ranges in this area are all higher when considering only highly insolated planets. This contradicts the hypothesis.
+Notably, the value of the mean for a wide variety of ranges in this area are all higher when considering highly insolated planets. This contradicts the hypothesis.
 
-A more thorough analysis of the effect of insolation on the relationship between stellar metallicity and planet properties is needed, including a consideration of other parameters, such as location within the disc, which are related to insolation but may also exhibit separate factors that are driving the relationship seen here.
-
-% It would be useful for these data to be collected and analysed, in future work.\\ SIKE
-
-% Should I just go ahead and test this now? I'm tempted. I could always just have it running. We're restricting based on radius or mass? Ugh, let's do mass then I guess, we care about the low mass ones. Could literally just do these. We can restrict via radius tbh since this is closely linked to mass.
-
-% I wonder what would happen to the radius
-
-% Ok ok. So it's actually more positive for the subNeptunes here. So for the low insolation sub-Neptunes then it should be negative, which checks out with the theory. We'll have to inspect the middle range further somehow.
-
-% Anyway I've done it but the ranges are now fcked.
-
-% And it does the opposite. Ahhh. Ok that's actually a pretty fun thing to note though. The range thing is annoying though, I'll probably just have to find a way to gloss over the mass restriction strange things.
-
-% As mentioned
-% %(was it?)
-% , the correlations seen in low mass planets are repeated in small radii planets, as may be expected, although the correlation between stellar metallicity and planet radius was relatively weak for low radii planets, with a mean of 0.174, although the standard deviation of the MCMC correlation distribution was low, leading to it still being significant.
-% Yeah but to be fair it was weak for the mass one as well. I think this comes down to the hydrogen thing which we've already described, also, yes it was weak but it was definetly there. Probably just means another factor is affecting it, as in there's lot's of fluctuation (e.g due to the insolation).
-
+A more thorough analysis of the effect of insolation on the relationship between stellar metallicity and planet properties is needed, including a consideration of other parameters, such as location within the disc, which are related to insolation but also cause separate effects which may be the drivers of the relationship seen here.
 
 Assuming that in lower mass planets an increase in metallicity is correlated to an increase in mass, one might also expect the density to also increase. Contrary to this, lower mass planets appear to exhibit a weak negative correlation between stellar metallicity and planet density. It should be noted however that this correlation is statistically insignificant, and the range of masses spans a wide variety of planet classes. More data are needed to confirm this relationship. This report offers no explanation for this relationship and the author encourages further work to be performed in the area.
 
-Instead, a strong positive correlation between stellar metallicity and planet density was discovered in medium range radii (4.75 to 10.25)~R$_\oplus$, although adjusting the range in either direction resulted in a negative correlation. More data are needed to confirm the existence of this relationship.
+Instead, as shown in figure \ref{figure: Fe/H vs Density planet plot - Radii range 1}, a strong positive correlation between stellar metallicity and planet density was discovered in medium range radii (4.75 to 10.25)~R$_\oplus$, although adjusting the range in either direction resulted in a lack of a correlation. More data are needed to confirm the existence of this relationship. % Negative? Really? Surely that can't be right...
 
 As implied above, when insisting that the range includes lower radii planets, no correlation was present between stellar metallicity and density.\\
 % 
@@ -941,23 +987,27 @@ As implied above, when insisting that the range includes lower radii planets, no
 % 
 %%%%%%%%%%%%%% The above stuff was a bit of a stretch. I need to think about it more I think, so I'll come back to it %%%%%%%%%%%%%%%%
 
-High mass planets exhibit negative correlations between stellar metallicity and their mass and radius. A possible explanation for this is that at these high masses, their jeans escape parameter is much higher, and so they can retain their atmospheres well. Variations in core mass at these masses would not impact upon the amount of hydrogen they can accrete and retain, and hence the radii that these planets could achieve. Instead, the availability of hydrogen is likely the dominant factor. An increase of stellar metallicity would, statistically, reduce the amount of hydrogen available, and since hydrogen dominates the radii of large mass planets this would result in relatively lower radii planets; and this is what our results indicate. To a lesser extent (since hydrogen does not dominate the mass of planets as much as it does the radius - [ehhhhhhh, check this, it's probably correct but you have zero source for it. Adding that in would be necessary]), the reduction in hydrogen would result in a reduction of the relative mass of the planet.
+High mass planets exhibit negative correlations between stellar metallicity and their mass and radius. A possible explanation for this is that at these high masses, their jeans escape parameter is much higher and so they can retain their atmospheres well. Variations in core mass at these masses would not impact upon the amount of hydrogen they can accrete and retain, and hence the radii that these planets could achieve. Instead, the availability of hydrogen is likely the dominant factor in the mass and radius that they can achieve. An increase of stellar metallicity would, statistically, reduce the amount of hydrogen available, and since hydrogen dominates the radii of large mass planets this would result in relatively lower radii planets; and this is what our results indicate.
 
-Our results confirm that in higher mass planets, the correlation between stellar metallicity and mass is indeed less strong than the correlation between stellar metallicity and radius. This alone may suggest hydrogen's dominance in the relationships at these masses.
+% Do I really need to suggest this and then give evidence or should I give evidence then suggest causes?
 
+Our results confirm that in higher mass planets, and in larger radius planets, the correlation between stellar metallicity and mass is less strong than the correlation between stellar metallicity and radius. This could be an indication that hydrogen does not dominate the mass of planets as much as it does the radius, the reduction in hydrogen would result in a reduction of the mass of the planet but to a lesser extent than it affects radius.\\
+% This alone may suggest hydrogen's dominance in the relationships at these masses.\\ % I don't think this fits in with the logic now.
 
 % Since the hydrogen dominates, one might expect that for higher insolation planets, this correlation is weaker, but stronger for lower insolation planets. We will check.
-\\
+% We never did since it all got a bit confused in my head
+% I doubt it would make much difference tbh. You'd need pretty high insolation to affect it. Although I suspect it would affect it a bit, pressuably the radius more than the mass.
 
-Planets in the range of density 0.65 to 1.5 g/cm$^3$ exhibit a negative correlation between stellar metallicity and planet mass. The author of this report propounds that planets of these densities represent the watery worlds.
-[Again, this is completely unreferenced]
+
+Planets in the range of density 0.65 to 1.5 g/cm$^3$ exhibit a negative correlation between stellar metallicity and planet mass. The author of this report propounds that planets of these densities represent planets dominated by water.
+
+% [Again, this is completely unreferenced]
 %kind of need to actually check that these are those though
-An increase in the stellar metallicity would result in a decrease in the availability of hydrogen, which is a component of water, thus reducing the amount of water and producing this negative correlation between stellar metallicity and mass.
+An increase in the stellar metallicity would result in a decrease in the availability of hydrogen, which is a component of water, thus reducing the amount of water and producing this negative correlation between stellar metallicity and mass. %Yeah but then it wouldn't be dominated by water would it
 
-When extending the lower bound of this range down to include all of the lower density planets, the range also exhibit a negative correlation between stellar metallicity and radius. At these low densities, it is likely that gas is dominating the radius of the planet, and so an increase in the stellar metallicity would, on average, infer a reduction of the available hydrogen and hence result in lower radius planets.\\
+When extending the lower bound of this range down to include all of the lower density planets, the range also exhibit a negative correlation between stellar metallicity and radius. At these low densities, it is likely that gas is dominating the radius of the planet, and so an increase in the stellar metallicity would, on average, infer a reduction of the available hydrogen and hence result in lower radius planets.
 
 % For a small range of higher mass planets (135 to 510)~M$_\oplus$, the planets exhibited a positive correlation between stellar metallicity and density. - In the results section we discarded the significance of this.
-
 
 \subsubsection{Cross-parameter trends}
 %%%%%%%%% Wednesday PM - I'm now going to cover the larger trends seen in the ranges and just mention then without speculation.
@@ -1029,31 +1079,42 @@ It may be tempting to consider the range as a whole since both the upper and low
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Comparison to Other Works}
-Wilson et al.. (2022), noted the existence of a negative correlation between stellar metallicity and planet density in the high mass sub-Neptune range of planets. As demonstrated in figure \ref{figure: Fe/H vs Density correlations - Mass ranges (0 to 40)}, the analyses presented in this report find no such correlation in the mass range appropriate for sub-Neptunes, however it should be noted that these analyses did not restrict the planets via their composition and hence planetary type, only their masses radii and densities, whereas Wilson et al. restricted their planets to those of sub-Neptune like properties, as described in section \ref{subsubsection: Sub-Neptunes}.
+Wilson et al.. (2022), noted the existence of a negative correlation between stellar metallicity and planet density in the high mass sub-Neptune range of planets. As demonstrated in figure \ref{figure: Fe/H vs Density correlations - Mass ranges (0 to 40)}, the analyses presented in this report find no such correlation in the mass range appropriate for sub-Neptunes, however it should be noted that these analyses did not restrict the planets via their composition and hence planetary type, only their masses radii and densities, whereas Wilson et al. restricted their planets to those of sub-Neptune like properties as described in section \ref{subsubsection: Sub-Neptunes}. Further studies should be conducted in this area.
+% Considering the possible explanations of the high mass planets in this study, one may be able to extend the ideas to sub-Neptunes, that is, a higher metallicity could result in lower amounts of disc hydrogen which would reduce the mass of planets which large enough cores to support hydrogen. Less hydrogen would increase the debsity though... .it must be the water This would indicate that sub-Neptunes do not form via planetesimal accretion and instead must form via pebble accretion. Further studies should be conducted in this area.
+% Honestly I recon it's just the high mass planets coming through. Although tbh he basically had like 8 planets. Anyone can find a correlation with 8 planets. Just gotta pick any 8. I'm guessing there's more to it than that though.
 
-
+% \subsection{Evolution of Observation on Conclusions}
+% Make that table of year etc.
 
 \section{Conclusions}
 %higlight the important stuff/the takes
-The author of this report is confident that stellar metallicity is positively correlated to planet mass and radius in smaller, less massive planets, particularly terrestrial planets, but is negatively correlated to planet mass and radius in larger, more massive planets, particularly gas giants. It is suggested that this is due to the dominance of iron on the effect of planet mass and radii in terrestrial planets, and the dominance of hydrogen on the effect of planet mass and radii in gas giants.
+The author of this report is confident that stellar metallicity is positively correlated to planet mass and radius in smaller, less massive planets, particularly terrestrial planets, but is negatively correlated to planet mass and radius in larger, more massive planets, particularly gas giants. It is suggested that this is due to the dominance of iron on the effect of metallicity on a planet's mass and hence radius for terrestrial planets, and the dominance of hydrogen on the effect of metallicity on a planet's mass and radius in gas giants. The lack of a correlation in sub-Neptunes is believed to be a result of both effects being in equilibrium for these masses.
 
 Considering the insolation of planets in future analyses may help to confirm these suggestions on the dominant effect at different mass planets.
 
-%What about that plato mission thing? I strongly want to reference Don.
-
+% Normally go after references
+\vspace{-1.5em}
 \section{Appendix}
-\subsection{Data Link + Code}
+
+\subsection{Data and Code}
+\label{subsection: Code}
 % Will add a link to the code and the data.
+The code used to perform these analysis, and all correlation data as displayed in the correlation heat maps (e.g figure \ref{figure: Fe/H vs Mass correlations - Radii ranges}) are available from \textit{https://github.com/george112n/How-Metallicity-Affects-Exoplanets}.
 
-\subsection{Correlation spaces when adjusting the range of mass and density}
-\subsubsection{Mass}
 
-Le table. Fe/H on Radius, mass and density.
+% Add this ones you've uploaded it all.
 
-Or do Radius as the section, then have two/4 graphs for low/high of mass/density.
+
+% \subsection{Correlation spaces when adjusting the range of mass and density}
+% \subsubsection{Mass}
+
+% Le table. Fe/H on Radius, mass and density.
+
+% Or do Radius as the section, then have two/4 graphs for low/high of mass/density.
 
 %Put the mass and density ones here
 
+%Unfortunetly ran out of time, but I think I have enough analysis as it is. Just need that to be quality.
 
 %\setlength{\itemsep}{-2mm}
 \vspace{-1em}

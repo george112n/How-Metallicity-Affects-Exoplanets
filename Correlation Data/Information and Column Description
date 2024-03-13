@@ -1,0 +1,13 @@
+Information for all of the correlation data files.
+
+
+The columns in all files are as follows:
+
+1. Lower bound of the range
+2. Upper bound of the range
+3. The number of planets in this range
+4. The mean of the MCMC Bayesian correlation distribution (see section 3.2)
+5. The standard deviation of the MCMC Bayesian correlation distribution
+6. The lower 95% percentile of the distribution
+7. The upper 95% percentile of the distribution
+8. The mean / standard deviation. Simply column 4 divided by column 5.
